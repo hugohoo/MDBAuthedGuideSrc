@@ -28,3 +28,5 @@ db.foo.insert([
 ]);
 
 db.foo.find();
+
+
