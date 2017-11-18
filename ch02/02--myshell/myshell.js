@@ -37,3 +37,5 @@ run("pwd");
 
 // 启动时禁止加载 .mongorc.js
 mongo --norc
+
+

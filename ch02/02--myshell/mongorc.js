@@ -20,3 +20,29 @@ print("Hello,you are looking paricularly "+compliment[index]+" today");
 //
 // //禁止删除索引
 // DBCollection.prototype.dropIndex=no;
+
+// 定制 shell 提示 —— 显示当前时间
+// prompt=function()//
+// {
+//     return (new Date())+"> ";
+// }
+
+// 定制 shell 提示 —— 显示当前使用的数据库
+prompt=function()//
+{
+    if (typeof db=="undefined") //
+    {
+        return "(nodb)> ";
+    }
+
+    // 检查最后的数据库操作
+    try//
+    {
+        db.runCommand({getLastError:1});
+    }catch(e)//
+    {
+        print(e);
+    }
+
+    return db+">";
+}
