@@ -34,3 +34,6 @@ typeof connectTo;
 
 // 查看当前工作目录
 run("pwd");
+
+// 启动时禁止加载 .mongorc.js
+mongo --norc
