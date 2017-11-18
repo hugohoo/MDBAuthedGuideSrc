@@ -39,3 +39,7 @@ run("pwd");
 mongo --norc
 
 
+// 调用编辑器编辑复杂变量
+var wap=db.blog.findOne();
+
+edit wap;

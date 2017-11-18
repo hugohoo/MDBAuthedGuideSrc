@@ -46,3 +46,6 @@ prompt=function()//
 
     return db+">";
 }
+
+
+EDITOR="D:/Sublime Text 3/sublime_text";
