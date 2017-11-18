@@ -43,3 +43,10 @@ mongo --norc
 var wap=db.blog.findOne();
 
 edit wap;
+
+/***
+ *访问特殊集合
+ ***/
+db.version;// 仅仅访问了内部的方法
+
+db.getCollection("version"); //获取到集合
