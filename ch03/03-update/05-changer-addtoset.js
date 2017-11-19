@@ -27,3 +27,14 @@ db.users.update({"username":"joe"},{
         "emails":"joe@hotmail.com"
     }
 });
+
+/***
+ * $addToSet 与 $each 连用，添加多个不重复的元素
+ ***/
+db.users.update({"username":"joe"},{
+    "$addToSet":{
+        "emails":{
+            "$each":["joe@php.net","joe.@example.com","joe@python.org"]
+        }
+    }
+});
