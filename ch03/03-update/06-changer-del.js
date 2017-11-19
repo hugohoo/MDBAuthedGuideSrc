@@ -23,3 +23,19 @@ db.keys.update({"_id":ObjectId("5a10f373163868a301465798")},{
         "keys":-1
     }
 });
+
+/***
+ * $pull 删除满足指定条件的所有元素
+ ***/
+db.lists.insert({
+    "todo":["dishes","laundry","dry cleaning","laundry"]
+});
+
+db.lists.find();
+
+// $pull 删除所有 laundry
+db.lists.update({},{
+    "$pull":{
+        "todo":"laundry"
+    }
+});
