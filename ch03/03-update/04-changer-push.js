@@ -63,7 +63,20 @@ db.posts.update({"title":"A Blog Post"},{
     }
 });
 
+/***
+ * $push 与 $ne 连用，确保只有不存在的时候才添加进去
+ ***/
+db.papers.insert({
+    "name":"ccav",
+    "authors cited":["ckxx","dgzy"]
+});
+db.papers.find();
 
+db.papers.update({"authors cited":{"$ne":"ckxx"}},{
+    "$push":{
+        "authors cited":"ckxx"
+    }
+});
 
 
 
