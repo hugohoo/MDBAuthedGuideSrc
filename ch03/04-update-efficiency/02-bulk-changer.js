@@ -40,3 +40,9 @@ var timePush=function() {
 }
 
 timePush(); //9680ms
+
+/***
+ *开/关二次幂空间分配
+ ***/
+db.runCommand({"collMod":"tester","usePowerOf2Sizes":true});
+db.runCommand({"collMod":"tester","usePowerOf2Sizes":false});
