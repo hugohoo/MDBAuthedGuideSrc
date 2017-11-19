@@ -18,3 +18,10 @@ db.users.find({"$or":[
     {name:"joe"},
     {age:{"$in":[27,18]}}
 ]});
+
+/***
+ * $not 取反查询
+ ***/
+db.users.find({age:{"$mod":[3,2]}});
+
+db.users.find({age:{"$not":{"$mod":[3,2]}}});
