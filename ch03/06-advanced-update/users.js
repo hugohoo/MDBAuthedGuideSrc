@@ -1,0 +1,10 @@
+/***
+ *用户集合
+ ***/
+db.users.drop();
+db.users.insert([
+    {name:"joe",age:20},
+    {name:"bob",age:27},
+    {name:"mm",age:18},
+]);
+db.users.find();
