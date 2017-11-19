@@ -22,3 +22,30 @@ db.posts.update({"title":"A Blog Post"},{
         }
     }
 });
+
+/***
+ * $push 与 $each 连用，一次添加多个元素
+ ***/
+// 增加尺寸
+db.posts.update({"title":"A Blog Post"},{
+    "$push":{
+        "size":{
+            "$each":[562.776,562.790,559.123]
+        }
+    }
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
