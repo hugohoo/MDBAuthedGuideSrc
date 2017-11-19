@@ -35,8 +35,17 @@ db.posts.update({"title":"A Blog Post"},{
     }
 });
 
-
-
+/***
+ * $push 与 $slice 连用，可以固定数组的长度，达到栈的功能
+ ***/
+db.posts.update({"title":"A Blog Post"},{
+    "$push":{
+        "size":{
+            "$each":[1,2,3,4,5],
+            "$slice":-4
+        }
+    }
+});
 
 
 
