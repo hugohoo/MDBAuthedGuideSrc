@@ -47,6 +47,21 @@ db.posts.update({"title":"A Blog Post"},{
     }
 });
 
+/***
+ * $push 与 $sort 连用，对新增的元素进行排序
+ ***/
+db.posts.update({"title":"A Blog Post"},{
+    "$push":{
+        "top10":{
+            "$each":[
+                {"name":"Nightmare on Elm Street","rating":6.6},
+                {"name":"Saw","rating":4.3},
+            ],
+            "$slice":-4,
+            "$sort":{"rating":-1}
+        }
+    }
+});
 
 
 
