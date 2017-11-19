@@ -35,3 +35,12 @@ db.posts.update({},{
         "comments.0.votes":1
     }
 });
+
+/***
+ * $  用来定位匹配条件的位置
+ ***/
+db.posts.update({"comments.author":"John"},{
+    "$set":{
+        "comments.$.author":"Jim"
+    }
+});
