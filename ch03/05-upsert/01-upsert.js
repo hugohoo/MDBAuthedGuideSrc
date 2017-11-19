@@ -28,3 +28,34 @@ db.analytics.update({"url":"/weibo"},{
         "pageviews":10
     }
 },true);
+
+/***
+ * 不匹配时自创建自增长
+ ***/
+db.users.update({"rep":25},{
+    "$inc":{"rep":3}
+});
+db.users.find();
+
+/***
+ * $setOnInsert 仅在创建的时候初始化，之后不再改变
+ ***/
+db.users.drop();
+db.users.find();
+
+db.users.update({},{
+    "$setOnInsert":{"createdAt":new Date()}
+},true);
+
+// 再次运行不会插入
+db.users.update({},{
+    "$setOnInsert":{"createdAt":new Date()}
+},true);
+
+/***
+ * save 函数 ，无则创建文档，有则更新文档
+ ***/
+db.foo.drop();
+db.foo.find();
+
+db.foo.save({x:42});
