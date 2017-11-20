@@ -21,3 +21,19 @@ db.users.insert({username:"bob"});
 
 // 不可以插入，唯一索引约束
 db.users.insert({username:"bob"});
+
+
+/***
+ * 复合唯一索引
+ ***/
+db.users.ensureIndex({age:1,username:1},{unique:true});
+
+//可以单键相同
+db.users.insert({age:10900});
+db.users.insert({username:"bob100"});
+
+db.users.insert({age:10900,username:"bob101"});
+db.users.insert({age:10900,username:"bob100"});
+
+// 不能都相同
+db.users.insert({age:10900,username:"bob100"});
