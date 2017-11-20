@@ -12,3 +12,8 @@ db.coll.find()._addSpecial("$max",{"_id":ObjectId("5a1223792fa9655637e0de52"), "
 
 // 查询文档的磁盘位置
 db.coll.find()._addSpecial("$showDiskLoc",true);
+
+/***
+ * 查询快照
+ ***/
+db.coll.find().snapshot();
