@@ -12,3 +12,4 @@ db.foo.getIndexes();
 
 // 修改限时索引的时限
 db.runCommand({"collMod":"kk.foo",expireAfterSecs:60*60*24});
+
