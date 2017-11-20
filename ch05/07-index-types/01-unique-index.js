@@ -37,3 +37,9 @@ db.users.insert({age:10900,username:"bob100"});
 
 // 不能都相同
 db.users.insert({age:10900,username:"bob100"});
+
+
+/***
+ * 去除重复
+ ***/
+db.users.ensureIndex({age:1},{unique:true,dropDups:true});
