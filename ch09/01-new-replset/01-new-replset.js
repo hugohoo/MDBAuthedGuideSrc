@@ -13,3 +13,6 @@ replicaSet.startSet();
 
 // 初始化 副本集 的配资
 replicaSet.initiate();
+
+// 关闭 副本集
+replicaSet.stopSet();
