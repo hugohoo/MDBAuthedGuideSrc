@@ -9,7 +9,7 @@ replicaSet=new ReplSetTest({"nodes":3});
 
 
 // 启动3个服务进程
-replicaSet.statrtSet();
+replicaSet.startSet();
 
 // 初始化 副本集 的配资
 replicaSet.initiate();
